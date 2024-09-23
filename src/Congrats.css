@@ -1,0 +1,243 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-image: url('images/BGG.jpg'); /* Set the background image */
+    background-size: cover; /* Ensures the image covers the entire viewport */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    height: 100vh; /* Sets the height to 100% of the viewport height */
+    margin: 0; /* Remove default margin */
+}
+
+@media (max-width: 768px) { /* Adjust for mobile view */
+    body {
+        background-size: contain; /* Adjusts to maintain aspect ratio */
+        height: auto; /* Allow height to adjust based on content */
+    }
+}
+
+@media (max-width: 768px) {
+    .birthdayCard {
+        width: 90%; /* Adjust width */
+        height: auto; /* Let height adjust based on content */
+        left: 0; /* Center it */
+        transform: perspective(3000px); /* Adjust perspective */
+    }
+}
+
+
+.birthdayCard {
+    position: relative;
+    width: 500px; /* doubled */
+    height: 700px; /* doubled */
+    top:0px ;
+  
+    left:-622px ;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transform: perspective(5000px); /* doubled */
+    transition: 4s;
+    
+}
+
+
+
+.birthdayCard:hover {
+    transform: perspective(5000px) rotate(5deg);
+  
+}
+
+.birthdayCard:hover .cardFront {
+    transform: rotateY(-160deg);
+    
+}
+
+.birthdayCard:hover .front-text,
+.birthdayCard:hover .wrap-deco,
+.birthdayCard:hover .wrap-decoTwo,
+.birthdayCard:hover .plate {
+    display: none;
+}
+
+.cardFront {
+    position: relative;
+    background-color: #251b1b;
+    width: 500px; /* doubled */
+    height: 700px; /* doubled */
+    overflow: hidden;
+    transform-origin: left;
+    box-shadow: inset 200px 40px 200px rgba(0, 0, 0, 0.13), 60px 0 100px rgba(0, 0, 0, 0.1);
+    transition: .4s;
+    left: 600px; /* doubled */
+    box-shadow: 0 40px 30px rgba(0, 0, 0, 0.3); /* Add shadow */
+}
+
+.happy, .toyou {
+    position: relative;
+    font-family: didot;
+    text-align: center;
+    backface-visibility: hidden;
+    font-size: 61px; /* doubled */
+}
+
+.happy {
+    top: 456px; /* doubled */
+}
+
+.toyou {
+    top: 306px; /* doubled */
+}
+
+.bday {
+    position: relative;
+    font-family: didot;
+    font-size: 60px; /* doubled */
+    text-align: center;
+    top: 380px; /* doubled */
+}
+
+.wrap-deco {
+    position: absolute;
+    top: -460px; /* doubled */
+    left: -400px; /* doubled */
+}
+
+.decorations {
+    position: absolute;
+    width: 800px; /* doubled */
+    height: 600px; /* doubled */
+    border: 6px solid #333; /* doubled */
+    border-radius: 100%; /* doubled */
+}
+
+.decorations:before, .decorations:after,
+.decorationsTwo:before, .decorationsTwo:after,
+.decorationsThree:before, .decorationsThree:after {
+    content: "";
+    position: absolute;
+    border-left: 40px solid transparent; /* doubled */
+    border-right: 40px solid transparent; /* doubled */
+    width: 0;
+    height: 0;
+}
+
+.decorations:before {
+    border-top: 80px solid #f15bb5; /* doubled */
+    top: 594px; /* doubled */
+    left: 420px; /* doubled */
+    transform: rotate(-5deg);
+}
+
+.decorations:after {
+    border-top: 80px solid #f4d35e; /* doubled */
+    top: 576px; /* doubled */
+    left: 520px; /* doubled */
+    left: 890px; /* doubled */
+}
+
+.decorationsTwo:before {
+    border-top: 80px solid #00f5d4; /* doubled */
+    top: 536px; /* doubled */
+    left: 630px; /* doubled */
+}
+
+.decorationsTwo:after, .decorationsThree:after {
+    border-top: 80px solid #9b5de5; /* doubled */
+    top: 476px; /* doubled */
+    left: 710px; /* doubled */
+}
+
+.wrap-decoTwo {
+    transform: scaleX(-1);
+    position: absolute;
+    top: -460px; /* doubled */
+    left: 890px; /* doubled */
+     left: 890px; /* doubled */
+}
+
+.decorationsThree:before {
+    border-top: 80px solid #00bbf9; /* doubled */
+    top: 536px; /* doubled */
+    left: 630px; /* doubled */
+}
+
+.plate {
+    position: absolute;
+    width: 260px; /* doubled */
+    height: 780px; /* doubled */
+    background-color: #00bbf9;
+    left: 120px; /* doubled */
+    top: 426px; /* doubled */
+}
+
+
+.birthday-image {
+    position: absolute; /* Position relative to .plate */
+    width: 500px; /* Adjust size as needed */
+    height: 780px; /* Maintain aspect ratio */
+    top: -450px; /* Adjust vertical position */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center the image */
+  }
+
+/* Remove cake and flame styles */
+.cake {
+    display: none; /* or comment out the entire .cake section */
+}
+
+.flame {
+    display: none; /* or comment out the entire .flame section */
+}
+
+/* Add confetti emoji class */
+.confetti {
+    position: absolute;
+    font-size: 50px; /* Adjust size as needed */
+    top: 1000px; /* Position it as desired */
+    left: 150px; /* Position it as desired */
+    z-index: 10; /* Ensure it appears above other elements */
+}
+
+.cardInside {
+    position: absolute;
+    background-color: #fff;
+    width: 500px; /* doubled */
+    height: 700px; /* doubled */
+    z-index: -1;
+    left: 0;
+    top: 0;
+    box-shadow: inset 600px 40px 200px rgba(0, 0, 0, 0.2);
+    left: 600px; /* doubled */
+    box-shadow: 0 40px 30px rgba(0, 0, 0, 0.3); /* Add shadow */
+    
+}
+
+.inside-text {
+    position: absolute;
+    top: -392px; /* doubled */
+    left: 20px;
+    transform: scale(0.8); /* doubled */
+}
+
+.wishes {
+    position: relative;
+    top: +230px; /* doubled */
+    margin: 60px; /* doubled */
+    font-size: 30px;
+    font-family: didot;
+}
+
+p {
+    font-family: didot;
+    bottom: -3200px; /* doubled */
+    color: #333;
+}
+
+.name {
+    font-size: 20px;
+    font-family: didot;
+    margin-left: 200px; /* doubled */
+    font-weight: normal;
+}
